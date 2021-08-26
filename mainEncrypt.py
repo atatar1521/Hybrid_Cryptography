@@ -2,8 +2,8 @@ from encryption_RSA import *
 from encryption_AES import *
 from Crypto.Cipher import AES
 from readFiles import *
+from writingFiles import *
 import secrets
-import csv
 
 
 def main(user_text):
@@ -23,26 +23,9 @@ def main(user_text):
     cipherText = encryptAES(cipherAESe, plainText)
     # encrypt AES key with RSA encryption  #########
     cipherKey = encryptRSA(publicRSAKey, key)
-    # list of items for writing to file #######
-    itemsToFile= [cipherKey]
-    # name of csv file
-    filename1 = "fileCipherKeyRSA.csv"
-    filename2 = "fileEncryptedText.csv"
-    filename3 = "fileNonceAES.csv"
-    # writing to csv file
-    with open(filename1, 'w') as csvfile:
-        # creating a csv writer object
-        csvwriter = csv.writer(csvfile)
-        # writing the data rows
-        csvwriter.writerows(itemsToFile)
-    # writing cipherText to file
-    f = open(filename2, "wb")
-    f.write(cipherText)
-    f.close()
-    # writing nonce to file
-    f = open(filename3, "wb")
-    f.write(nonce)
-    f.close()
+    writingCipherRSAKey(cipherKey)
+    writingEncryptedText(cipherText)
+    writingNonce(nonce)
     # returning cipherText
     return cipherText
 

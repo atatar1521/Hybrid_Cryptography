@@ -1,5 +1,6 @@
 from csv import reader
 
+
 # set cipher text for presentation
 def readingCipherText():
     filename2 = "fileEncryptedText.csv"
@@ -56,8 +57,9 @@ def readingEncryptedKey():
     encryptedKeyCSV = transferData(listToDecrypt)
     return encryptedKeyCSV
 
+
 def readingNonce():
-    filename1= "fileNonceAES.csv"
+    filename1 = "fileNonceAES.csv"
     in_file = open(filename1, "rb")
     nonceFromFile = in_file.read()
     in_file.close()

@@ -2,29 +2,18 @@ import tkinter as tk
 import tkinter.font as tkfont
 from tkinter import *
 from mainEncrypt import *
+from writingFiles import *
 
 def choice():
     publicKey, publicPQ= publicKeyGeneration()
     list1 =[]
     list1.append(publicKey[0])
     list1.append(publicKey[1])
-    filename1 = "filePublicKey.csv"
-    itemsToFile= [list1]
-    with open(filename1, 'w') as csvfile:
-        # creating a csv writer object
-        csvwriter = csv.writer(csvfile)
-        # writing the data rows
-        csvwriter.writerows(itemsToFile)
+    writingPublicKey(list1)
     list2 =[]
     list2.append(publicPQ[0])
     list2.append(publicPQ[1])
-    filename2 = "filePublicPQ.csv"
-    itemsToFile= [list2]
-    with open(filename2, 'w') as csvfile:
-        # creating a csv writer object
-        csvwriter = csv.writer(csvfile)
-        # writing the data rows
-        csvwriter.writerows(itemsToFile)
+    writingPublicPQ(list2)
     createLabel(publicKey)
 def createLabel(ciphertext):
     label3 = tk.Label(root, text=ciphertext, width=40, bg="white")
