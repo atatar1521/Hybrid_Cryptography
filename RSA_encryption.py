@@ -1,6 +1,8 @@
 import random
 
 
+
+
 def gcd(a, b):
     # search for the greatest common divider (should be 1)
     while b != 0:
@@ -44,8 +46,7 @@ def generatePrime():
     # returning prime number
     return num
 
-
-def KeyGeneration():
+def publicKeyGeneration():
     # generating 2 primes
     p = generatePrime()
     q = generatePrime()
@@ -61,9 +62,15 @@ def KeyGeneration():
     while g != 1:
         e = random.randrange(1, phi)
         g = gcd(e, phi)
+    publicPQ = p,q
+    return (n, e), (p,q)
+
+def privateKeyGeneration(publicKey,p,q):
+    n, e = publicKey
+    phi = (p - 1) * (q - 1)
     x = multiplicativeInverse(e, phi)
     # returning public and private key
-    return (n, e), (x, n)
+    return (x, n)
 
 
 def encryptRSA(publicKey, textToEncrypt):

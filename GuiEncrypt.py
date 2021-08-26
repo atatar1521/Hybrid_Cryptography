@@ -10,11 +10,6 @@ def encryptionChoice():
     createLabel(ciphertext)
 
 
-def decryptionChoice():
-    plainText = mainDecrypt()
-    createLabel(plainText)
-
-
 def createLabel(ciphertext):
     label3 = tk.Label(root, text=ciphertext, width=40, bg="white")
     # adding the font features to the label
@@ -36,6 +31,7 @@ canvas = tk.Canvas(root, height=500, width=400, bg="lightgreen")
 # Set the family,size and style of the font
 bold_font = tkfont.Font(family="Helvetica", size=12, weight="bold")
 # Creating a label with a text and attaching it to the root
+
 label1 = tk.Label(root, text="Enter the Text", width=20, bg="lightgreen")
 # adding the font features to the label
 label1.config(font=bold_font)

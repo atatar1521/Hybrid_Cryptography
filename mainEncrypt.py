@@ -1,13 +1,14 @@
 from RSA_encryption import *
 from encryption_AES import *
 from Crypto.Cipher import AES
+from decryption_AES import *
 import secrets
 import csv
 
 
 def main(user_text):
     # print("Generating RSA public and Private keys......")
-    publicRSAKey, privateRSAKey = KeyGeneration()  #######
+    publicRSAKey = readingPublicKey()
     # print("Generating AES symmetric key......")
     key = secrets.token_hex(16)
     # print("AES Symmetric Key: ")
@@ -23,11 +24,11 @@ def main(user_text):
     # encrypt AES key with RSA encryption  #########
     cipherKey = encryptRSA(publicRSAKey, key)
     # list of items for writing to file #######
-    itemsToFile= [privateRSAKey, cipherKey]
+    itemsToFile= [cipherKey]
     # name of csv file
-    filename1 = "EncryptedKeys.csv"
+    filename1 = "CipherKeyRSA.csv"
     filename2 = "EncryptedText.csv"
-    filename3 = "EncryptedNonce.csv"
+    filename3 = "NonceAES.csv"
     # writing to csv file
     with open(filename1, 'w') as csvfile:
         # creating a csv writer object
