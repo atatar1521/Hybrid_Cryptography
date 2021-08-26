@@ -23,6 +23,7 @@ def main(user_text):
     cipherText = encryptAES(cipherAESe, plainText)
     # encrypt AES key with RSA encryption  #########
     cipherKey = encryptRSA(publicRSAKey, key)
+    # writing to files
     writingCipherRSAKey(cipherKey)
     writingEncryptedText(cipherText)
     writingNonce(nonce)

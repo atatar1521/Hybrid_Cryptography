@@ -4,23 +4,26 @@ from tkinter import *
 from mainEncrypt import *
 from writingFiles import *
 
+
 def choice():
+    # generating public key
     publicKey, publicPQ= publicKeyGeneration()
-    list1 =[]
-    list1.append(publicKey[0])
-    list1.append(publicKey[1])
+    # Writing to files
+    list1 = [publicKey[0], publicKey[1]]
     writingPublicKey(list1)
-    list2 =[]
-    list2.append(publicPQ[0])
-    list2.append(publicPQ[1])
+    list2 = [publicPQ[0], publicPQ[1]]
     writingPublicPQ(list2)
+    # create label with public key
     createLabel(publicKey)
+
+
 def createLabel(ciphertext):
     label3 = tk.Label(root, text=ciphertext, width=40, bg="white")
     # adding the font features to the label
     label3.config(font=bold_font)
     # placing the label in the canvas
     canvas.create_window(200, 100, window=label3)
+
 
 # Creating a window
 root = tk.Tk()

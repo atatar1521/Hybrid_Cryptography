@@ -44,6 +44,7 @@ def generatePrime():
     # returning prime number
     return num
 
+
 def publicKeyGeneration():
     # generating 2 primes
     p = generatePrime()
@@ -60,15 +61,16 @@ def publicKeyGeneration():
     while g != 1:
         e = random.randrange(1, phi)
         g = gcd(e, phi)
-    publicPQ = p,q
-    return (n, e), (p,q)
+    publicPQ = p, q
+    return (n, e), (p, q)
 
-def privateKeyGeneration(publicKey,p,q):
+
+def privateKeyGeneration(publicKey, p, q):
     n, e = publicKey
     phi = (p - 1) * (q - 1)
     x = multiplicativeInverse(e, phi)
     # returning public and private key
-    return (x, n)
+    return x, n
 
 
 def encryptRSA(publicKey, textToEncrypt):
