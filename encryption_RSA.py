@@ -1,8 +1,6 @@
 import random
 
 
-
-
 def gcd(a, b):
     # search for the greatest common divider (should be 1)
     while b != 0:

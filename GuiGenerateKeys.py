@@ -8,7 +8,7 @@ def choice():
     list1 =[]
     list1.append(publicKey[0])
     list1.append(publicKey[1])
-    filename1 = "PublicKey.csv"
+    filename1 = "filePublicKey.csv"
     itemsToFile= [list1]
     with open(filename1, 'w') as csvfile:
         # creating a csv writer object
@@ -18,7 +18,7 @@ def choice():
     list2 =[]
     list2.append(publicPQ[0])
     list2.append(publicPQ[1])
-    filename2 = "PublicPQ.csv"
+    filename2 = "filePublicPQ.csv"
     itemsToFile= [list2]
     with open(filename2, 'w') as csvfile:
         # creating a csv writer object

@@ -1,7 +1,7 @@
-from RSA_encryption import *
+from encryption_RSA import *
 from encryption_AES import *
 from Crypto.Cipher import AES
-from decryption_AES import *
+from readFiles import *
 import secrets
 import csv
 
@@ -26,9 +26,9 @@ def main(user_text):
     # list of items for writing to file #######
     itemsToFile= [cipherKey]
     # name of csv file
-    filename1 = "CipherKeyRSA.csv"
-    filename2 = "EncryptedText.csv"
-    filename3 = "NonceAES.csv"
+    filename1 = "fileCipherKeyRSA.csv"
+    filename2 = "fileEncryptedText.csv"
+    filename3 = "fileNonceAES.csv"
     # writing to csv file
     with open(filename1, 'w') as csvfile:
         # creating a csv writer object
