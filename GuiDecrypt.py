@@ -40,7 +40,7 @@ canvas.create_window(200, 50, window=label2)
 # Tkinter Variable
 v = tk.IntVar()
 # Radio Button for Decryption
-label6 = tk.Button(root, text="Decryption", padx=20, command=decryptionChoice, bg="lightgreen")
+label6 = tk.Button(root, text="Decrypt", padx=20, command=decryptionChoice, bg="lightgreen")
 label6.config(font=bold_font)
 canvas.create_window(200, 100, window=label6)
 # Creating a label with a text and attaching it to the root

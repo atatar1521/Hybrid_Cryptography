@@ -7,7 +7,7 @@ from writingFiles import *
 
 def choice():
     # generating public key
-    publicKey, publicPQ= publicKeyGeneration()
+    publicKey, publicPQ = publicKeyGeneration()
     # Writing to files
     list1 = [publicKey[0], publicKey[1]]
     writingPublicKey(list1)
@@ -42,6 +42,5 @@ label4 = tk.Button(root, text="Generate Public Key", padx=20, command=choice, bg
 label4.config(font=bold_font)
 canvas.create_window(200, 50, window=label4)
 canvas.pack()
-
 
 root.mainloop()
