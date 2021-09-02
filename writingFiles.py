@@ -21,6 +21,13 @@ def writingEncryptedText(cipherText):
     f.write(cipherText)
     f.close()
 
+def txtWritingFile(file):
+    filename3 = "fileDecrypt.txt"
+    # writing nonce to file
+    f = open(filename3, "wb")
+    f.write(file)
+    f.close()
+
 
 def writingNonce(nonce):
     filename3 = "fileNonceAES.csv"

@@ -1,12 +1,19 @@
 import tkinter as tk
 import tkinter.font as tkfont
 from tkinter import *
-from mainDecrypt import *
+from decryptOptions import *
+from writingFiles import *
 
 
 def decryptionChoice():
     plainText = mainDecrypt()
     createLabel(plainText)
+
+
+def filesDecryption():
+    decryptedText = mainDecrypt()
+    txtWritingFile(decryptedText.encode('utf-8'))
+    createLabel("File decrypted")
 
 
 def createLabel(plaintext):
@@ -40,14 +47,17 @@ canvas.create_window(200, 50, window=label2)
 # Tkinter Variable
 v = tk.IntVar()
 # Radio Button for Decryption
-label6 = tk.Button(root, text="Decrypt", padx=20, command=decryptionChoice, bg="lightgreen")
+label6 = tk.Button(root, text="Decrypt Text", padx=20, command=decryptionChoice, bg="lightgreen")
 label6.config(font=bold_font)
 canvas.create_window(200, 100, window=label6)
+label9= tk.Button(root, text="Decrypt File", padx=20, command=filesDecryption, bg="lightgreen")
+label9.config(font=bold_font)
+canvas.create_window(200, 150, window=label9)
 # Creating a label with a text and attaching it to the root
 label7 = tk.Label(root, text="Converted Text ", width=20, bg="lightgreen")
 # adding the font features to the label
 label7.config(font=bold_font)
 # placing the label in the canvas
-canvas.create_window(200, 150, window=label7)
+canvas.create_window(200, 200, window=label7)
 
 root.mainloop()

@@ -1,6 +1,15 @@
 from csv import reader
 
 
+
+def readingFileContains(filename):
+    filename1 = filename
+    in_file = open(filename1, "rb")
+    fileToEncrypt = in_file.read()
+    in_file.close()
+    # returning cipher text from file
+    return fileToEncrypt
+
 # set cipher text for presentation
 def readingCipherText():
     filename2 = "fileEncryptedText.csv"

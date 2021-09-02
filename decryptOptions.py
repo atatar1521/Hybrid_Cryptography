@@ -19,7 +19,9 @@ def mainDecrypt():
     cipherAESd = AES.new(decryptedKey, AES.MODE_GCM, nonce=nonceFromFile)
     decryptedText = decryptAES(cipherAESd, cipherTextFromFile)
     # returning decrypted text
+
     return decryptedText
+
 
 
 if __name__ == "__main__":
